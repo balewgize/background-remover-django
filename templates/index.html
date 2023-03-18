@@ -4,11 +4,37 @@
 {% block content %}
 
 <div class="container py-5 col-lg-6 mx-auto">
-  <h5 class="mb-4">Drop image below or browse files.</h5>
-  <form method="post" enctype="multipart/form-data">
+  <form method="post" class="d-block" id="uploadForm" onsubmit="onSubmit()" enctype="multipart/form-data">
+    <h5 class="mb-4">Drop an image below or browse files.</h5>
     {% csrf_token %}
     {{form|crispy}}
-    <button type="submit" class="btn btn-primary mt-3"><i class="fa-solid fa-cloud-arrow-up me-2"></i>Upload Image</button>
+    <button type="submit" class="btn btn-primary mt-3"><i class="fa-solid fa-cloud-arrow-up me-2"></i>Upload
+      Image</button>
   </form>
+
+  <div class="d-none" id="progress">
+    <h5 class="me-5">Processing image...</h5>
+    <span class="small">The image is being uploaded to the server and processed.</sp>
+      <div class="d-flex justify-content-center mt-5">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Processing image...</span>
+        </div>
+      </div>
+  </div>
 </div>
+
+{% block page_js %}
+<script>
+  function onSubmit() {
+    let uploadForm = document.querySelector("#uploadForm");
+    let progress = document.querySelector("#progress");
+
+    uploadForm.setAttribute("class", "d-none");
+    progress.setAttribute("class", "d-block");
+
+    uploadForm.submit();
+  }
+</script>
+{% endblock %}
+
 {% endblock %}
