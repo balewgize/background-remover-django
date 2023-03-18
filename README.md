@@ -21,7 +21,7 @@ A web app built with Python/Django that enables users to remove image background
 It does well for most images that doesn't have messy background but I'm sure you won't expect photoshop like results :) 
 
 ### Features
-- Download final result
+- Download the final result
 - Transparent background (PNG format)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -49,7 +49,7 @@ To get a local copy up and running follow these simple steps.
    ```
    git clone https://github.com/balewgize/background-remover.git
    ```
-2. Install required packages
+2. Install required packages (virtual environments recommended)
    ```
    pip install -r requirements.txt
    ```
@@ -66,9 +66,10 @@ To get a local copy up and running follow these simple steps.
     ```
     python manage.py runserver
     ```
-
-Browse http://127.0.0.1:8000
+6. Goto http://127.0.0.1:8000 on your browser
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+Loved the project? Consider giving a star ★
 
 Thanks!
