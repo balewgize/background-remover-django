@@ -16,12 +16,12 @@
 
 [![Screenshot](static/images/screenshot.png?raw=true "Tomar")](#)
 
-A web app built with Python/Django that enables users to remove image background using pre-trained AI model. It allows users to download the final result image with a transparent background. 
+A web app built with Python/Django that enables users to remove background from images using pre-trained AI model. It allows users to download the final result image with a transparent background. 
 
 It does well for most images that doesn't have messy background but I'm sure you won't expect photoshop like results :) 
 
 ### Features
-- Download the final result
+- Downloadable final result
 - Transparent background (PNG format)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -29,7 +29,7 @@ It does well for most images that doesn't have messy background but I'm sure you
 ### Built With
 - Python/Django
 - Bootstrap
-- Rembg
+- rembg
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -53,10 +53,9 @@ To get a local copy up and running follow these simple steps.
    ```
    pip install -r requirements.txt
    ```
-3. Provide credentials in *.env*  (create a file named .env inside **background_remover** folder - project root directory)
+3. Provide credentials in *.env*  (example in .env.dev file)
    ```
     DJANGO_SECRET_KEY=
-    DJANGO_DEBUG=True
    ```
 4. Apply migrations
     ```
