@@ -10,13 +10,17 @@ def get_upload_path(instance, filename):
 
     ext = filename.split(".")[-1]
     time_stamp = datetime.today().strftime("%Y%m%d_%H%M%S")
-    year_month = datetime.today().strftime("%Y/%m")
-    image_path = f"{year_month}/{time_stamp}.{ext}"
+    folder = datetime.today().strftime("%Y/%m")
+    image_path = f"{folder}/{time_stamp}.{ext}"
     return image_path
 
 
 class UserActivity(models.Model):
-    """A class representing user activity (removing image backgrounds)"""
+    """
+    A class representing user activity
+
+    Uploading image to remove its background and downloading.
+    """
 
     image = models.ImageField(upload_to=get_upload_path)
     result = models.ImageField(upload_to=get_upload_path)
@@ -28,7 +32,7 @@ class UserActivity(models.Model):
         verbose_name_plural = "User Activities"
 
     def __str__(self) -> str:
-        return self.slug
+        return str(self.slug)
 
     def get_absolute_url(self):
         return reverse("bgremove:result", args=(self.slug,))
