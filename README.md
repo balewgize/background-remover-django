@@ -16,11 +16,11 @@
 
 [![Screenshot](static/images/screenshot.png?raw=true "Tomar")](#)
 
-A web app built with Python/Django that allow users to remove image backgrounds using pre-trained AI model. It allows users to download final result image with a transparent background. 
+A web app built with Python/Django that enables users to remove image background using pre-trained AI model. It allows users to download the final result image with a transparent background. 
 
 It does well for most images that doesn't have messy background but I'm sure you won't expect photoshop like results :) 
 
-## Features
+### Features
 - Download final result
 - Transparent background (PNG format)
 
