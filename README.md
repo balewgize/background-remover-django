@@ -14,7 +14,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Screenshot](static/images/home-page.png?raw=true "Tomar")](#)
+[![Screenshot](static/images/screenshot.png?raw=true "Tomar")](#)
 
 A web app built with Python/Django that allow users to remove image backgrounds using pre-trained AI model. It allows users to download final result image with a transparent background. 
 
@@ -67,7 +67,7 @@ To get a local copy up and running follow these simple steps.
     python manage.py runserver
     ```
 
-Browse http://127.0.0.1:800
+Browse http://127.0.0.1:8000
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
