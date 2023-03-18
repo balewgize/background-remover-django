@@ -1,15 +1,35 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
+{% block page_css %}
+<style>
+  img {
+    width: 100%;
+  }
+</style>
+
+{% endblock %}
+
 {% block content %}
 
-<div class="container py-5 col-lg-8 mx-auto">
-  <h5 class="mb-4">Process completed.</h5>
-  <div class="mt-5">
-    <!-- TODO: image style -->
-    <img src="{{activity.image.url}}" alt="" width="100">
-    <img src="{{activity.result.url}}" alt="" width="100">
+<div class="container py-5 mx-auto">
+  <h5>Process completed.</h5>
+  <span>You can download the image with transparent background (right).</span>
+  <div class="mt-5 d-flex flex-column flex-lg-row">
+    <div class="col-lg-5 border border-5 rounded">
+      <img src="{{activity.image.url}}" alt="">
+    </div>
+    <div class="col-lg-1 my-3 my-lg-0 d-flex align-items-center justify-content-center">
+      <span class="d-none d-lg-inline"><i class="fa-solid fa-angles-right"></i></span>
+      <span class="d-inline d-lg-none"><i class="fa-solid fa-angles-down"></i></span>
+    </div>
+    <div class="col-lg-5 border border-5 rounded">
+      <img src="{{activity.result.url}}" alt="">
+    </div>
   </div>
-  <a href="{{ activity.result.url }}" class="btn btn-primary my-5" download>Download</a>
+  <div class="mt-0 mt-lg-5 d-flex justify-content-center">
+    <a href="{{ activity.result.url }}" class="btn btn-primary my-5" download><i
+        class="fa-solid fa-cloud-arrow-down me-2"></i>Download Result</a>
+  </div>
 </div>
 {% endblock %}
