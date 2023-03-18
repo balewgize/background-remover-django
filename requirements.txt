@@ -1,4 +1,1 @@
-Django==4.1.7
-python-dotenv==1.0.0
-crispy-bootstrap5==0.7
-rembg==2.0.30
+-r requirements/local.txt
