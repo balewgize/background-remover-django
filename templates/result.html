@@ -13,8 +13,9 @@
 {% block content %}
 
 <div class="container py-5 mx-auto">
+  {% if user_activity.result.url %}
   <h5>Process completed.</h5>
-  <span>You can download the image with transparent background (right).</span>
+  <p>You can download the image with transparent background (right).</p>
   <div class="mt-5 d-flex flex-column flex-lg-row">
     <div class="col-lg-5 border border-5 rounded">
       <img src="{{user_activity.image.url}}" alt="">
@@ -31,5 +32,12 @@
     <a href="{{ user_activity.result.url }}" class="btn btn-primary my-5" download><i
         class="fa-solid fa-cloud-arrow-down me-2"></i>Download Result</a>
   </div>
+  {% else %}
+  <div class="">
+    <h5>Process failed.</h5>
+    <p>We are sorry for the inconvenience. Please try again.</p>
+    <a href="{% url 'bgremove:home' %}">Upload image</a>
+  </div>
+  {% endif %}
 </div>
 {% endblock %}
