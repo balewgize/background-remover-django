@@ -22,7 +22,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path("", include("bgremove.urls")),
-    path(os.getenv("ADMIN_URL", "admin/"), admin.site.urls),
+    path(f"{settings.ADMIN_URL}/", admin.site.urls),
 ]
 
 if settings.DEBUG:
