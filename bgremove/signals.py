@@ -1,4 +1,4 @@
-import io
+from io import BytesIO
 import os
 
 from django.core.files import File
@@ -24,16 +24,22 @@ def process_image(sender, instance, *args, **kwargs):
     if instance.result:
         return
 
-    response = session.get(instance.image.url)
-    if response.status_code != 200:
-        return
+    environment = os.getenv("DJANGO_SETTINGS_MODULE")
+    if "production" in environment:
+        # get image from Dropbox when in production
+        response = session.get(instance.image.url)
+        if response.status_code != 200:
+            return
+        image_file = Image.open(BytesIO(response.content))
+    else:
+        # get image from disk when in local
+        image_file = Image.open(instance.image.path)
 
     path, ext = instance.image.name.split(".")
     filename = path.split("/")[-1]
     result_path = f"{filename}_output.{ext}"
 
-    input = Image.open(io.BytesIO(response.content))
-    output = remove(input)  # remove background using rembg
+    output = remove(image_file)  # remove background using rembg
     output.convert("RGB")
     output.save(result_path, "PNG")
 
