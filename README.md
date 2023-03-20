@@ -53,7 +53,7 @@ To get a local copy up and running follow these simple steps.
    ```
 2. Install required packages (virtual environments recommended)
    ```
-   pip install -r requirements.txt
+   pip install -r requirements/local.txt
    ```
 3. Provide credentials in *.env*  (example in .env.dev file)
    ```
