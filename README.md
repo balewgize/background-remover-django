@@ -22,7 +22,8 @@ It does well for most images that doesn't have messy background but I'm sure you
 
 ### Features
 - Downloadable final result
-- Transparent background (PNG format)
+- Transparent background
+- Dropbox for media storage in production
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -30,6 +31,7 @@ It does well for most images that doesn't have messy background but I'm sure you
 - Python/Django
 - Bootstrap
 - rembg
+- Dropbox
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
