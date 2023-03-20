@@ -31,6 +31,7 @@ def process_image(sender, instance, *args, **kwargs):
         if response.status_code != 200:
             return
         image_file = Image.open(BytesIO(response.content))
+        response = None
     else:
         # get image from disk when in local
         image_file = Image.open(instance.image.path)
@@ -40,8 +41,11 @@ def process_image(sender, instance, *args, **kwargs):
     result_path = f"{filename}_output.{ext}"
 
     output = remove(image_file)  # remove background using rembg
+    image_file = None
+
     output.convert("RGB")
     output.save(result_path, "PNG")
+    output = None
 
     instance.result.save(result_path, File(open(result_path, "rb")))
     os.remove(result_path)
