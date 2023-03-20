@@ -57,18 +57,20 @@ To get a local copy up and running follow these simple steps.
    ```
     DJANGO_SECRET_KEY=
    ```
-4. Apply migrations
+4. Specify settings to use
+   ```
+   export DJANGO_SETTINGS_MODULE=background_remover.settings.local
+   ```
+5. Apply migrations
     ```
     python manage.py migrate
     ```
-5. Start the server
+6. Start the server
     ```
     python manage.py runserver
     ```
-6. Goto http://127.0.0.1:8000 on your browser
+7. Goto http://127.0.0.1:8000 on your browser
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-Loved the project? Consider giving a star ★
 
 Thanks!
