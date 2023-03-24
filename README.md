@@ -16,6 +16,10 @@
 
 [![Screenshot](static/images/screenshot.png?raw=true "Tomar")](#)
 
+**Note:** The project is production ready and can be easily deployed. But it requires good amount of resource to run ML models used by **rembg** in the cloud. I'm unable to deploy the django version for free.
+
+So I used ```Streamlit``` to deploy the main script with enchanced functionality. Check here: <a href="https://balewgize-bg-remover.streamlit.app" target="_blank"><strong>View Demo »</strong></a>
+
 A web app built with Python/Django that enables users to remove background from images using pre-trained AI model. It allows users to download the final result image with a transparent background. 
 
 It does well for most images that doesn't have messy background but I'm sure you won't expect photoshop like results :) 
@@ -79,7 +83,5 @@ To get a local copy up and running follow these simple steps.
 5. Goto http://127.0.0.1:8000 on your browser
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-**Note:** The project is production ready and can be easily deployed. But it requires good amount of resource to run ML models used by **rembg** in the cloud. I'm looking for ways to deploy it for free.
 
 Thanks!
