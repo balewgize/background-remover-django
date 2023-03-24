@@ -69,7 +69,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "background_remover.urls"
+ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
@@ -89,7 +89,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "background_remover.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 
 # Database

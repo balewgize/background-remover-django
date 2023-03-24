@@ -2,7 +2,7 @@ import os
 
 from dotenv import load_dotenv
 
-from background_remover.settings.common import *
+from config.settings.common import *
 
 
 # update envrionment variables for production
@@ -25,17 +25,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("PGDATABASE"),
-        "USER": os.getenv("PGUSER"),
-        "PASSWORD": os.getenv("PGPASSWORD"),
-        "HOST": os.getenv("PGHOST"),
-        "PORT": os.getenv("PGPORT"),
-    }
-}
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 

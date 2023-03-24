@@ -23,7 +23,7 @@ It does well for most images that doesn't have messy background but I'm sure you
 ### Features
 - Downloadable final result
 - Transparent background
-- Dropbox for media storage in production
+- Production ready
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -47,31 +47,39 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-1. Clone the repo
+1. Clone the repo and navigate to ```background-remover``` directory 
    ```
    git clone https://github.com/balewgize/background-remover.git
    ```
+   ```
+   cd background-remover
+   ```
 2. Install required packages (virtual environments recommended)
+   ```
+   python3 -m venv venv && source venv/bin/activate
+   ```
    ```
    pip install -r requirements/local.txt
    ```
-3. Provide credentials in *.env*  (example in .env.dev file)
+3. Provide credentials in ```.env```  (example in .env.dev file)
    ```
     DJANGO_SECRET_KEY=
    ```
-4. Specify settings to use
+   Use this command to generate strong ```SECRET_KEY```
    ```
-   export DJANGO_SETTINGS_MODULE=background_remover.settings.local
+   python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
    ```
-5. Apply migrations and start the server
+4. Apply migrations and start the server
    ```
    python manage.py migrate
    ```
    ```
     python manage.py runserver
     ``` 
-6. Goto http://127.0.0.1:8000 on your browser
+5. Goto http://127.0.0.1:8000 on your browser
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+**Note:** The project is production ready and can be easily deployed. But it requires good amount of resource to run ML models used by **rembg** in the cloud. I'm looking for ways to deploy it for free.
 
 Thanks!
