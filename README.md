@@ -20,9 +20,10 @@ A web app built with Python/Django that enables users to remove background from 
 
 It does well for most images that doesn't have messy background but I'm sure you won't expect photoshop like results :) 
 
+### Deployment
 **Note:** The project is production ready and can be easily deployed. But it requires good amount of resource to run ML models used by **rembg** in the cloud. At the moment, I'm unable to deploy the django version for free.
 
-So I used ```Streamlit``` to deploy the main script with enchanced functionality. Check here: <a href="https://balewgize-bg-remover.streamlit.app" target="_blank"><strong>View Demo »</strong></a>
+So I used ```Streamlit``` to deploy the main script with enchanced functionality. <a href="https://bgremover.streamlit.app/" target="_blank"><strong>Check here</strong></a>
 
 
 ### Features
